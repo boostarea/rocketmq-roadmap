@@ -12,6 +12,7 @@
     <modules>
         <module>rocketmq-infrastructure</module>
         <module>rocketmq-feature-producer</module>
+        <module>rocketmq-feature-consumer</module>
     </modules>
 
     <properties>

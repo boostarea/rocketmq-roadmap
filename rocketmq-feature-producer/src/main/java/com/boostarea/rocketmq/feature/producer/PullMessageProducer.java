@@ -7,18 +7,18 @@ import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 
 /**
- * 普调消息生产者
+ * 拉取消息生产者
  */
-public class NormalMessageProducer {
+public class PullMessageProducer {
 
     public static void main(String[] args) throws MQClientException {
-        DefaultMQProducer producer = new DefaultMQProducer("simple_producer_group");
+        DefaultMQProducer producer = new DefaultMQProducer("simple_pull_producer_group");
         producer.setNamesrvAddr("127.0.0.1:9876");
         producer.start();
 
         for (int i = 0; i < 100; i++)
             try {
-                Message msg = new Message("TopicTest",
+                Message msg = new Message("PullTestTopic",
                         "TagA",
                         "OrderID188",
                         "Hello world".getBytes(RemotingHelper.DEFAULT_CHARSET));

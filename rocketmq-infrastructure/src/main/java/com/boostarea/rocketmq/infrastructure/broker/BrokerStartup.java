@@ -10,16 +10,7 @@ import org.apache.rocketmq.store.config.FlushDiskType;
 import org.apache.rocketmq.store.config.MessageStoreConfig;
 
 /**
- * <p>文件名称:com.boostarea.rocketmq.infrastructure.broker.BrokerStartup</p>
- * <p>文件描述: </p>
- * <p>版权所有: Copyright(C)2019-2022</p>
- * <p>公司: 趣店集团 </p>
- * <p>内容摘要: </p>
- * <p>其他说明: </p>
- *
- * @author <a> href="mailto:chenrong@qudian.com">chen</a>
- * @version 1.0
- * @since 2024/5/31
+ * Broker 启动类
  */
 public class BrokerStartup {
 
@@ -34,6 +25,8 @@ public class BrokerStartup {
         final BrokerConfig brokerConfig = new BrokerConfig();
         brokerConfig.setBrokerName("broker-a");
         brokerConfig.setNamesrvAddr("127.0.0.1:9876");
+        //支持SQL92
+        brokerConfig.setEnablePropertyFilter(true);
         // MessageStoreConfig 配置
         final MessageStoreConfig messageStoreConfig = new MessageStoreConfig();
         messageStoreConfig.setDeleteWhen("04");
